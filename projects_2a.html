@@ -114,6 +114,16 @@
 			</div> <!-- /.col-md-8 -->	
 
 
+      <!DOCTYPE html>
+      <html>
+      <head><meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <title>hrdata_dataanalysis_eda</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+      
+      
+      
+      
       <style type="text/css">
           pre { line-height: 125%; }
       td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
@@ -15209,7 +15219,7 @@
           </script>
           <!-- End of mathjax configuration --></head>
       <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
-      <h1 id="HR-data-analysis-(part-1)">HR data analysis (part 1)<a class="anchor-link" href="#HR-data-analysis-(part-1)">&#182;</a></h1>
+      </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
       </div>
       </div>
       </div>
@@ -15287,18 +15297,6 @@
       </div>
       <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
       </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-      <p>Based on the location data we can already see that the company is based in the US.</p>
-      
-      </div>
-      </div>
-      </div>
-      </div>
-      <div  class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-      <div class="jp-Cell-inputWrapper">
-      <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-      </div>
-      <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-      </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
       <h3 id="Setting-up-a-business-task">Setting up a business task<a class="anchor-link" href="#Setting-up-a-business-task">&#182;</a></h3>
       </div>
       </div>
@@ -15339,7 +15337,7 @@
       <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
       </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
       <p>You can find the original code <strong><a href="https://github.com/bettybuilds/HRdata/blob/main/hrdata_dataanalysis.sql">here</a></strong> which was written in the mySQL Workbench. It contains the data manipulation and cleaning part. In this article I'm going to show only the EDA.
-      To be visually more aesthetic, I wanted it to be in a Jupyter notebook, and instead of mySQL connector, this time I'm going to use the SQL Magic extension</p>
+      To be visually more aesthetic, I wanted it to be in a Jupyter notebook, but this time I'm going to use SQL Magic extension.</p>
       
       </div>
       </div>
@@ -15372,6 +15370,18 @@
       </div>
       </div>
       
+      </div>
+      <div  class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+      <div class="jp-Cell-inputWrapper">
+      <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+      </div>
+      <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+      </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+      <p>Loading in the dataset:</p>
+      
+      </div>
+      </div>
+      </div>
       </div><div  class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
       <div class="jp-Cell-inputWrapper">
       <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -15380,8 +15390,7 @@
       <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
       <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
            <div class="CodeMirror cm-s-jupyter">
-      <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Loading in the dataset</span>
-      <span class="o">%</span><span class="k">sql</span> mysql+mysqldb://root:&lt;password&gt;@localhost/dataset
+      <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">sql</span> mysql+mysqldb://root:&lt;password&gt;@localhost/dataset
       </pre></div>
       
            </div>
@@ -15389,6 +15398,18 @@
       </div>
       </div>
       
+      </div>
+      <div  class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+      <div class="jp-Cell-inputWrapper">
+      <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+      </div>
+      <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+      </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+      <p>Let's check how many employees we have by jobtitle:</p>
+      
+      </div>
+      </div>
+      </div>
       </div><div  class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
       <div class="jp-Cell-inputWrapper">
       <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -15399,7 +15420,6 @@
            <div class="CodeMirror cm-s-jupyter">
       <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">sql</span>
       
-      <span class="o">#</span><span class="w"> </span><span class="n">Let</span><span class="err">&#39;</span><span class="n">s</span><span class="w"> </span><span class="k">check</span><span class="w"> </span><span class="n">how</span><span class="w"> </span><span class="n">many</span><span class="w"> </span><span class="n">employees</span><span class="w"> </span><span class="n">we</span><span class="w"> </span><span class="n">have</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">jobtitle</span><span class="p">:</span>
       <span class="k">SELECT</span><span class="w"> </span><span class="n">jobtitle</span><span class="p">,</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="n">jobtitle</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">nu_employee</span>
       <span class="k">FROM</span><span class="w"> </span><span class="n">hrdata</span>
       <span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">jobtitle</span>
@@ -15446,43 +15466,43 @@
           <tbody>
               <tr>
                   <td>Research Assistant II</td>
-                  <td>754</td>
+                  <td>695</td>
               </tr>
               <tr>
                   <td>Business Analyst</td>
-                  <td>708</td>
+                  <td>648</td>
               </tr>
               <tr>
                   <td>Human Resources Analyst II</td>
-                  <td>613</td>
+                  <td>557</td>
               </tr>
               <tr>
                   <td>Research Assistant I</td>
-                  <td>538</td>
+                  <td>492</td>
               </tr>
               <tr>
                   <td>Account Executive</td>
-                  <td>505</td>
+                  <td>465</td>
               </tr>
               <tr>
                   <td>Data Visualization Specialist</td>
-                  <td>457</td>
+                  <td>425</td>
               </tr>
               <tr>
                   <td>Staff Accountant I</td>
-                  <td>441</td>
+                  <td>411</td>
               </tr>
               <tr>
                   <td>Human Resources Analyst</td>
-                  <td>408</td>
+                  <td>380</td>
               </tr>
               <tr>
                   <td>Software Engineer I</td>
-                  <td>397</td>
+                  <td>366</td>
               </tr>
               <tr>
                   <td>Systems Administrator I</td>
-                  <td>374</td>
+                  <td>349</td>
               </tr>
           </tbody>
       </table>
@@ -15494,6 +15514,18 @@
       
       </div>
       
+      </div>
+      <div  class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+      <div class="jp-Cell-inputWrapper">
+      <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+      </div>
+      <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+      </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+      <p>Now lets see what jobs we have by department:</p>
+      
+      </div>
+      </div>
+      </div>
       </div><div  class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
       <div class="jp-Cell-inputWrapper">
       <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -15504,7 +15536,6 @@
            <div class="CodeMirror cm-s-jupyter">
       <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">sql</span>
       
-      <span class="o">#</span><span class="w"> </span><span class="n">Now</span><span class="w"> </span><span class="n">lets</span><span class="w"> </span><span class="n">see</span><span class="w"> </span><span class="n">what</span><span class="w"> </span><span class="n">jobs</span><span class="w"> </span><span class="n">we</span><span class="w"> </span><span class="n">have</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">department</span><span class="p">:</span>
       <span class="k">SELECT</span><span class="w"> </span><span class="k">DISTINCT</span><span class="w"> </span><span class="n">department</span><span class="p">,</span><span class="w"> </span><span class="n">jobtitle</span>
       <span class="k">FROM</span><span class="w"> </span><span class="n">hrdata</span>
       <span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">department</span>
@@ -15691,59 +15722,59 @@
               </tr>
               <tr>
                   <td>Account Executive</td>
-                  <td>12.0040</td>
+                  <td>12.3613</td>
               </tr>
               <tr>
                   <td>Account Manager</td>
-                  <td>11.1495</td>
+                  <td>11.2647</td>
               </tr>
               <tr>
                   <td>Accountant I</td>
-                  <td>12.3038</td>
+                  <td>12.6800</td>
               </tr>
               <tr>
                   <td>Accountant II</td>
-                  <td>11.6404</td>
+                  <td>12.0625</td>
               </tr>
               <tr>
                   <td>Accountant III</td>
-                  <td>12.4302</td>
+                  <td>12.6867</td>
               </tr>
               <tr>
                   <td>Accountant IV</td>
-                  <td>11.3448</td>
+                  <td>11.8750</td>
               </tr>
               <tr>
                   <td>Accounting Assistant I</td>
-                  <td>12.6629</td>
+                  <td>13.0000</td>
               </tr>
               <tr>
                   <td>Accounting Assistant II</td>
-                  <td>11.5783</td>
+                  <td>11.7531</td>
               </tr>
               <tr>
                   <td>Accounting Assistant III</td>
-                  <td>12.0139</td>
+                  <td>12.2500</td>
               </tr>
               <tr>
                   <td>Accounting Assistant IV</td>
-                  <td>12.9684</td>
+                  <td>13.5610</td>
               </tr>
               <tr>
                   <td>Actuary</td>
-                  <td>12.1429</td>
+                  <td>12.5185</td>
               </tr>
               <tr>
                   <td>Administrative Assistant</td>
-                  <td>11.1750</td>
+                  <td>11.7297</td>
               </tr>
               <tr>
                   <td>Administrative Assistant I</td>
-                  <td>13.1990</td>
+                  <td>13.4754</td>
               </tr>
               <tr>
                   <td>Administrative Assistant II</td>
-                  <td>11.7826</td>
+                  <td>11.8372</td>
               </tr>
           </tbody>
       </table>
@@ -15770,6 +15801,18 @@
       </div>
       </div>
       </div>
+      </div>
+      <div  class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+      <div class="jp-Cell-inputWrapper">
+      <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+      </div>
+      <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+      </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+      <p>What about the gender distribution on these role levels?</p>
+      
+      </div>
+      </div>
+      </div>
       </div><div  class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
       <div class="jp-Cell-inputWrapper">
       <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -15780,7 +15823,6 @@
            <div class="CodeMirror cm-s-jupyter">
       <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">sql</span>
       
-      <span class="o">#</span><span class="w"> </span><span class="n">What</span><span class="w"> </span><span class="n">about</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">gender</span><span class="w"> </span><span class="n">distribution</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">these</span><span class="w"> </span><span class="k">role</span><span class="w"> </span><span class="n">levels</span><span class="o">?</span>
       <span class="k">SELECT</span><span class="w"> </span><span class="n">gender</span><span class="p">,</span><span class="w"> </span><span class="n">jobtitle</span><span class="p">,</span><span class="w"> </span><span class="k">AVG</span><span class="p">(</span><span class="n">experience</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">avg_exp</span>
       <span class="k">FROM</span><span class="w"> </span><span class="n">hrdata</span>
       <span class="k">WHERE</span><span class="w"> </span><span class="n">gender</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="s1">&#39;Non-Conforming&#39;</span>
@@ -15874,12 +15916,22 @@
               </tr>
               <tr>
                   <td>Female</td>
-                  <td>Human Resources Manager</td>
-                  <td>15.0278</td>
+                  <td>Research Assistant III</td>
+                  <td>15.2857</td>
               </tr>
               <tr>
                   <td>Male</td>
-                  <td>Assistant Professor</td>
+                  <td>Analog Circuit Design manager</td>
+                  <td>15.2273</td>
+              </tr>
+              <tr>
+                  <td>Female</td>
+                  <td>Human Resources Manager</td>
+                  <td>15.2000</td>
+              </tr>
+              <tr>
+                  <td>Female</td>
+                  <td>Compensation Analyst</td>
                   <td>15.0000</td>
               </tr>
               <tr>
@@ -15888,18 +15940,8 @@
                   <td>15.0000</td>
               </tr>
               <tr>
-                  <td>Female</td>
-                  <td>Compensation Analyst</td>
-                  <td>15.0000</td>
-              </tr>
-              <tr>
                   <td>Male</td>
-                  <td>Office Assistant IV</td>
-                  <td>15.0000</td>
-              </tr>
-              <tr>
-                  <td>Female</td>
-                  <td>Office Assistant I</td>
+                  <td>Assistant Professor</td>
                   <td>15.0000</td>
               </tr>
           </tbody>
@@ -15922,160 +15964,6 @@
       <p>There are slightly more female at the top of the list, which means that the highest years of experience
       in the company are currently owned by females.
       I'm not able to detect anything else for the role levels with this pivot.</p>
-      
-      </div>
-      </div>
-      </div>
-      </div><div  class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-      <div class="jp-Cell-inputWrapper">
-      <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-      </div>
-      <div class="jp-InputArea jp-Cell-inputArea">
-      <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-      <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-           <div class="CodeMirror cm-s-jupyter">
-      <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">sql</span>
-      
-      <span class="k">SELECT</span><span class="w"> </span><span class="n">gender</span><span class="p">,</span><span class="w"> </span><span class="n">jobtitle</span><span class="p">,</span><span class="w"> </span><span class="k">AVG</span><span class="p">(</span><span class="n">experience</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">avg_exp</span>
-      <span class="k">FROM</span><span class="w"> </span><span class="n">hrdata</span>
-      <span class="k">WHERE</span><span class="w"> </span><span class="n">gender</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="s1">&#39;Non-Conforming&#39;</span>
-      <span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">gender</span><span class="p">,</span><span class="w"> </span><span class="n">jobtitle</span>
-      <span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">jobtitle</span>
-      <span class="k">LIMIT</span><span class="w"> </span><span class="mi">15</span><span class="p">;</span>
-      </pre></div>
-      
-           </div>
-      </div>
-      </div>
-      </div>
-      
-      <div class="jp-Cell-outputWrapper">
-      <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-      </div>
-      
-      
-      <div class="jp-OutputArea jp-Cell-outputArea">
-      <div class="jp-OutputArea-child">
-          
-          <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-      
-      
-      <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-      <pre> * mysql+mysqldb://root:***@localhost/dataset
-      15 rows affected.
-      </pre>
-      </div>
-      </div>
-      <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-          
-          <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
-      
-      
-      
-      <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
-      <table>
-          <thead>
-              <tr>
-                  <th>gender</th>
-                  <th>jobtitle</th>
-                  <th>avg_exp</th>
-              </tr>
-          </thead>
-          <tbody>
-              <tr>
-                  <td>Male</td>
-                  <td>Account Coordinator</td>
-                  <td>6.0000</td>
-              </tr>
-              <tr>
-                  <td>Female</td>
-                  <td>Account Executive</td>
-                  <td>11.8217</td>
-              </tr>
-              <tr>
-                  <td>Male</td>
-                  <td>Account Executive</td>
-                  <td>12.0802</td>
-              </tr>
-              <tr>
-                  <td>Male</td>
-                  <td>Account Manager</td>
-                  <td>10.9252</td>
-              </tr>
-              <tr>
-                  <td>Female</td>
-                  <td>Account Manager</td>
-                  <td>11.1863</td>
-              </tr>
-              <tr>
-                  <td>Male</td>
-                  <td>Accountant I</td>
-                  <td>11.9348</td>
-              </tr>
-              <tr>
-                  <td>Female</td>
-                  <td>Accountant I</td>
-                  <td>12.4667</td>
-              </tr>
-              <tr>
-                  <td>Female</td>
-                  <td>Accountant II</td>
-                  <td>12.3750</td>
-              </tr>
-              <tr>
-                  <td>Male</td>
-                  <td>Accountant II</td>
-                  <td>10.4359</td>
-              </tr>
-              <tr>
-                  <td>Male</td>
-                  <td>Accountant III</td>
-                  <td>12.7632</td>
-              </tr>
-              <tr>
-                  <td>Female</td>
-                  <td>Accountant III</td>
-                  <td>12.0444</td>
-              </tr>
-              <tr>
-                  <td>Female</td>
-                  <td>Accountant IV</td>
-                  <td>11.0000</td>
-              </tr>
-              <tr>
-                  <td>Male</td>
-                  <td>Accountant IV</td>
-                  <td>11.8696</td>
-              </tr>
-              <tr>
-                  <td>Male</td>
-                  <td>Accounting Assistant I</td>
-                  <td>13.3182</td>
-              </tr>
-              <tr>
-                  <td>Female</td>
-                  <td>Accounting Assistant I</td>
-                  <td>12.0714</td>
-              </tr>
-          </tbody>
-      </table>
-      </div>
-      
-      </div>
-      
-      </div>
-      
-      </div>
-      
-      </div>
-      <div  class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-      <div class="jp-Cell-inputWrapper">
-      <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-      </div>
-      <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-      </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-      <p>At first sight, ordering by the job title from the first couple of rows gives me the feeling that on average
-      the females have more experience than the males, but to state such things from this pivot would be a little foolish.</p>
       
       </div>
       </div>
@@ -16136,14 +16024,14 @@
           </thead>
           <tbody>
               <tr>
-                  <td>Female</td>
-                  <td>11.9438</td>
-                  <td>10321</td>
+                  <td>Male</td>
+                  <td>12.2417</td>
+                  <td>10472</td>
               </tr>
               <tr>
-                  <td>Male</td>
-                  <td>11.9592</td>
-                  <td>11288</td>
+                  <td>Female</td>
+                  <td>12.2695</td>
+                  <td>9540</td>
               </tr>
           </tbody>
       </table>
@@ -16220,7 +16108,7 @@
           </thead>
           <tbody>
               <tr>
-                  <td>21609</td>
+                  <td>20012</td>
               </tr>
           </tbody>
       </table>
@@ -16232,6 +16120,18 @@
       
       </div>
       
+      </div>
+      <div  class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+      <div class="jp-Cell-inputWrapper">
+      <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+      </div>
+      <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+      </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+      <p>The total count is 20,012.</p>
+      
+      </div>
+      </div>
+      </div>
       </div><div  class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
       <div class="jp-Cell-inputWrapper">
       <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -16242,7 +16142,6 @@
            <div class="CodeMirror cm-s-jupyter">
       <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">sql</span>
       
-      <span class="o">#</span><span class="n">The</span><span class="w"> </span><span class="n">total</span><span class="w"> </span><span class="k">count</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="mi">21</span><span class="p">,</span><span class="mi">609</span><span class="w"> </span><span class="n">so</span><span class="w"> </span><span class="n">we</span><span class="w"> </span><span class="k">are</span><span class="w"> </span><span class="n">going</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">divide</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="k">sum</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="n">it</span><span class="p">.</span>
       <span class="k">SELECT</span><span class="w"> </span><span class="n">gender</span><span class="p">,</span><span class="w"> </span><span class="k">SUM</span><span class="p">(</span><span class="n">experience</span><span class="p">)</span><span class="o">/</span><span class="s1">&#39;21609&#39;</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">gender_exp</span>
       <span class="k">FROM</span><span class="w"> </span><span class="n">hrdata</span>
       <span class="k">WHERE</span><span class="w"> </span><span class="n">gender</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="s1">&#39;Non-Conforming&#39;</span>
@@ -16288,11 +16187,11 @@
           <tbody>
               <tr>
                   <td>Male</td>
-                  <td>6.247211809894026</td>
+                  <td>5.932481836271924</td>
               </tr>
               <tr>
                   <td>Female</td>
-                  <td>5.70466009533065</td>
+                  <td>5.416770789948632</td>
               </tr>
           </tbody>
       </table>
@@ -16319,6 +16218,18 @@
       </div>
       </div>
       </div>
+      </div>
+      <div  class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+      <div class="jp-Cell-inputWrapper">
+      <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+      </div>
+      <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+      </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+      <p>What about the age?</p>
+      
+      </div>
+      </div>
+      </div>
       </div><div  class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
       <div class="jp-Cell-inputWrapper">
       <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -16329,7 +16240,6 @@
            <div class="CodeMirror cm-s-jupyter">
       <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">sql</span>
       
-      <span class="o">#</span><span class="w"> </span><span class="n">What</span><span class="w"> </span><span class="n">about</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">age</span><span class="o">?</span>
       <span class="k">SELECT</span><span class="w"> </span><span class="n">gender</span><span class="p">,</span><span class="w"> </span><span class="n">age</span><span class="p">,</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="n">id</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">nu_employee</span>
       <span class="k">FROM</span><span class="w"> </span><span class="n">hrdata</span>
       <span class="k">WHERE</span><span class="w"> </span><span class="n">gender</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="s1">&#39;Non-Conforming&#39;</span>
@@ -16379,77 +16289,77 @@
               <tr>
                   <td>Female</td>
                   <td>20</td>
-                  <td>117</td>
+                  <td>110</td>
               </tr>
               <tr>
                   <td>Male</td>
                   <td>20</td>
-                  <td>112</td>
+                  <td>97</td>
               </tr>
               <tr>
                   <td>Male</td>
                   <td>21</td>
-                  <td>313</td>
+                  <td>286</td>
               </tr>
               <tr>
                   <td>Female</td>
                   <td>21</td>
-                  <td>286</td>
+                  <td>262</td>
               </tr>
               <tr>
                   <td>Male</td>
                   <td>22</td>
-                  <td>378</td>
+                  <td>350</td>
               </tr>
               <tr>
                   <td>Female</td>
                   <td>22</td>
-                  <td>288</td>
+                  <td>264</td>
               </tr>
               <tr>
                   <td>Male</td>
                   <td>23</td>
-                  <td>307</td>
+                  <td>285</td>
               </tr>
               <tr>
                   <td>Female</td>
                   <td>23</td>
-                  <td>271</td>
+                  <td>252</td>
               </tr>
               <tr>
                   <td>Male</td>
                   <td>24</td>
-                  <td>286</td>
+                  <td>267</td>
               </tr>
               <tr>
                   <td>Female</td>
                   <td>24</td>
-                  <td>258</td>
+                  <td>234</td>
               </tr>
               <tr>
                   <td>Male</td>
                   <td>25</td>
-                  <td>297</td>
+                  <td>277</td>
               </tr>
               <tr>
                   <td>Female</td>
                   <td>25</td>
-                  <td>282</td>
+                  <td>270</td>
               </tr>
               <tr>
                   <td>Male</td>
                   <td>26</td>
-                  <td>330</td>
+                  <td>294</td>
               </tr>
               <tr>
                   <td>Female</td>
                   <td>26</td>
-                  <td>284</td>
+                  <td>265</td>
               </tr>
               <tr>
                   <td>Male</td>
                   <td>27</td>
-                  <td>292</td>
+                  <td>267</td>
               </tr>
           </tbody>
       </table>
@@ -16533,77 +16443,77 @@
               <tr>
                   <td>Male</td>
                   <td>20</td>
-                  <td>11.9375</td>
+                  <td>12.7732</td>
               </tr>
               <tr>
                   <td>Female</td>
                   <td>20</td>
-                  <td>11.4017</td>
+                  <td>11.6727</td>
               </tr>
               <tr>
                   <td>Male</td>
                   <td>21</td>
-                  <td>12.1629</td>
+                  <td>12.5315</td>
               </tr>
               <tr>
                   <td>Female</td>
                   <td>21</td>
-                  <td>11.5245</td>
+                  <td>11.9504</td>
               </tr>
               <tr>
                   <td>Female</td>
                   <td>22</td>
-                  <td>12.2882</td>
+                  <td>12.6061</td>
               </tr>
               <tr>
                   <td>Male</td>
                   <td>22</td>
-                  <td>12.2540</td>
+                  <td>12.5400</td>
               </tr>
               <tr>
                   <td>Female</td>
                   <td>23</td>
-                  <td>12.1993</td>
+                  <td>12.5000</td>
               </tr>
               <tr>
                   <td>Male</td>
                   <td>23</td>
-                  <td>12.0717</td>
+                  <td>12.3860</td>
               </tr>
               <tr>
                   <td>Male</td>
                   <td>24</td>
-                  <td>12.5909</td>
+                  <td>12.8464</td>
               </tr>
               <tr>
                   <td>Female</td>
                   <td>24</td>
-                  <td>11.6550</td>
+                  <td>12.0769</td>
               </tr>
               <tr>
                   <td>Female</td>
                   <td>25</td>
-                  <td>12.3475</td>
+                  <td>12.5741</td>
               </tr>
               <tr>
                   <td>Male</td>
                   <td>25</td>
-                  <td>12.2727</td>
+                  <td>12.5451</td>
               </tr>
               <tr>
                   <td>Male</td>
                   <td>26</td>
-                  <td>12.4364</td>
+                  <td>12.8265</td>
               </tr>
               <tr>
                   <td>Female</td>
                   <td>26</td>
-                  <td>12.3310</td>
+                  <td>12.6868</td>
               </tr>
               <tr>
                   <td>Male</td>
                   <td>27</td>
-                  <td>12.2877</td>
+                  <td>12.6067</td>
               </tr>
           </tbody>
       </table>
@@ -16711,10 +16621,10 @@
                   <td>Black or African American</td>
               </tr>
               <tr>
-                  <td>Two or More Races</td>
+                  <td>Asian</td>
               </tr>
               <tr>
-                  <td>Asian</td>
+                  <td>Two or More Races</td>
               </tr>
               <tr>
                   <td>American Indian or Alaska Native</td>
@@ -16782,7 +16692,7 @@
           </thead>
           <tbody>
               <tr>
-                  <td>22214</td>
+                  <td>20574</td>
               </tr>
           </tbody>
       </table>
@@ -16801,7 +16711,7 @@
       </div>
       <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
       </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-      <p>There are no missing data here, so it means that our total count is the row number: 22,214.</p>
+      <p>There are no missing data here, so it means that our total count is the row number: 20,574.</p>
       
       </div>
       </div>
@@ -16861,31 +16771,31 @@
           <tbody>
               <tr>
                   <td>White</td>
-                  <td>28.48654001980733</td>
+                  <td>26.41127217070316</td>
               </tr>
               <tr>
                   <td>Two or More Races</td>
-                  <td>16.42207616818223</td>
+                  <td>15.161609795624381</td>
               </tr>
               <tr>
                   <td>Black or African American</td>
-                  <td>16.291527865310165</td>
+                  <td>15.103088142612767</td>
               </tr>
               <tr>
                   <td>Asian</td>
-                  <td>16.034932925182318</td>
+                  <td>14.850994868101196</td>
               </tr>
               <tr>
                   <td>Hispanic or Latino</td>
-                  <td>11.258665706311335</td>
+                  <td>10.4258575672999</td>
               </tr>
               <tr>
                   <td>American Indian or Alaska Native</td>
-                  <td>5.973710272800936</td>
+                  <td>5.559557036103358</td>
               </tr>
               <tr>
                   <td>Native Hawaiian or Other Pacific Islander</td>
-                  <td>5.532547042405691</td>
+                  <td>5.104888808859278</td>
               </tr>
           </tbody>
       </table>
@@ -16904,10 +16814,22 @@
       </div>
       <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
       </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-      <p>Almost 30% of the company are Whites, another bigger bites are Multiracials, Black/African Americans
+      <p>Almost ~29% of the company are Whites, another bigger bites are Multiracials, Black/African Americans
       and Asians with ~16% each.
-      Hispanic/Latinos are significantly less represented in the company with 11%. Meanwhile the
-      American Indian/Alaska Natives, the Native Hawaiians or any Other Pacific Isnlanders are present only 5%.</p>
+      Hispanic/Latinos are significantly less represented in the company with a 11%. Meanwhile the
+      American Indian/Alaska natives, the native Hawaiians or any other Pacific Isnlanders are present only ~6%.</p>
+      
+      </div>
+      </div>
+      </div>
+      </div>
+      <div  class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+      <div class="jp-Cell-inputWrapper">
+      <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+      </div>
+      <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+      </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+      <p>We can check the data regarding the experience:</p>
       
       </div>
       </div>
@@ -16921,8 +16843,6 @@
       <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
            <div class="CodeMirror cm-s-jupyter">
       <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">sql</span>
-      
-      <span class="o">#</span><span class="w"> </span><span class="n">We</span><span class="w"> </span><span class="n">can</span><span class="w"> </span><span class="k">check</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="k">data</span><span class="w"> </span><span class="n">regarding</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">experience</span><span class="p">:</span>
       
       <span class="k">SELECT</span><span class="w"> </span><span class="n">race</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="k">COUNT</span><span class="p">(</span><span class="n">race</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="s1">&#39;22214&#39;</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">100</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">distr_race</span><span class="p">,</span><span class="w"> </span><span class="k">AVG</span><span class="p">(</span><span class="n">experience</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">avg_exp</span>
       <span class="k">FROM</span><span class="w"> </span><span class="n">hrdata</span>
@@ -16970,38 +16890,38 @@
           <tbody>
               <tr>
                   <td>Native Hawaiian or Other Pacific Islander</td>
-                  <td>5.532547042405691</td>
-                  <td>12.0757</td>
+                  <td>5.104888808859278</td>
+                  <td>12.4048</td>
               </tr>
               <tr>
                   <td>Black or African American</td>
-                  <td>16.291527865310165</td>
-                  <td>11.9892</td>
-              </tr>
-              <tr>
-                  <td>Asian</td>
-                  <td>16.034932925182318</td>
-                  <td>11.9646</td>
-              </tr>
-              <tr>
-                  <td>Hispanic or Latino</td>
-                  <td>11.258665706311335</td>
-                  <td>11.9620</td>
+                  <td>15.103088142612767</td>
+                  <td>12.3133</td>
               </tr>
               <tr>
                   <td>Two or More Races</td>
-                  <td>16.42207616818223</td>
-                  <td>11.9605</td>
+                  <td>15.161609795624381</td>
+                  <td>12.2824</td>
+              </tr>
+              <tr>
+                  <td>Hispanic or Latino</td>
+                  <td>10.4258575672999</td>
+                  <td>12.2785</td>
+              </tr>
+              <tr>
+                  <td>Asian</td>
+                  <td>14.850994868101196</td>
+                  <td>12.2543</td>
               </tr>
               <tr>
                   <td>White</td>
-                  <td>28.48654001980733</td>
-                  <td>11.8914</td>
+                  <td>26.41127217070316</td>
+                  <td>12.1807</td>
               </tr>
               <tr>
                   <td>American Indian or Alaska Native</td>
-                  <td>5.973710272800936</td>
-                  <td>11.8877</td>
+                  <td>5.559557036103358</td>
+                  <td>12.1498</td>
               </tr>
           </tbody>
       </table>
@@ -17020,9 +16940,9 @@
       </div>
       <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
       </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-      <p>There is no significant discrepancy in the experience between the different races. Black/African Americans
-      have slightly more experience than most of the company, but the Native Hawaiians/Other Pacific Isnalders
-      are at the top.</p>
+      <p>There is no significant discrepancy in the experience between the different races.
+      Black/African Americans usually have slightly more experience than most of the company, but the
+      Native Hawaiians/Other Pacific Isnalders are at the top.</p>
       <p>We can check the jobtitles for each race in a pivot as well, but it's too much information. We should check
       this in a chart later.</p>
       
@@ -17085,6 +17005,16 @@
           </thead>
           <tbody>
               <tr>
+                  <td>American Indian or Alaska Native</td>
+                  <td>Developer II</td>
+                  <td>22.0000</td>
+              </tr>
+              <tr>
+                  <td>Hispanic or Latino</td>
+                  <td>Web Designer IV</td>
+                  <td>22.0000</td>
+              </tr>
+              <tr>
                   <td>Native Hawaiian or Other Pacific Islander</td>
                   <td>Office Assistant I</td>
                   <td>22.0000</td>
@@ -17095,14 +17025,9 @@
                   <td>22.0000</td>
               </tr>
               <tr>
-                  <td>Hispanic or Latino</td>
-                  <td>Web Designer IV</td>
-                  <td>22.0000</td>
-              </tr>
-              <tr>
-                  <td>American Indian or Alaska Native</td>
-                  <td>Developer II</td>
-                  <td>22.0000</td>
+                  <td>Native Hawaiian or Other Pacific Islander</td>
+                  <td>Software Engineer IV</td>
+                  <td>21.0000</td>
               </tr>
               <tr>
                   <td>White</td>
@@ -17116,8 +17041,8 @@
               </tr>
               <tr>
                   <td>Native Hawaiian or Other Pacific Islander</td>
-                  <td>Software Engineer IV</td>
-                  <td>21.0000</td>
+                  <td>Senior Sales Associate</td>
+                  <td>20.5000</td>
               </tr>
               <tr>
                   <td>Native Hawaiian or Other Pacific Islander</td>
@@ -17125,8 +17050,8 @@
                   <td>20.5000</td>
               </tr>
               <tr>
-                  <td>Black or African American</td>
-                  <td>Research Assistant IV</td>
+                  <td>Native Hawaiian or Other Pacific Islander</td>
+                  <td>Attorney</td>
                   <td>20.0000</td>
               </tr>
               <tr>
@@ -17136,28 +17061,23 @@
               </tr>
               <tr>
                   <td>Native Hawaiian or Other Pacific Islander</td>
-                  <td>Attorney</td>
-                  <td>20.0000</td>
-              </tr>
-              <tr>
-                  <td>Native Hawaiian or Other Pacific Islander</td>
                   <td>Mechanical Systems Engineer</td>
                   <td>20.0000</td>
               </tr>
               <tr>
+                  <td>Black or African American</td>
+                  <td>Research Assistant IV</td>
+                  <td>20.0000</td>
+              </tr>
+              <tr>
+                  <td>American Indian or Alaska Native</td>
+                  <td>Internal Auditor</td>
+                  <td>19.6667</td>
+              </tr>
+              <tr>
                   <td>Native Hawaiian or Other Pacific Islander</td>
                   <td>Research Assistant III</td>
                   <td>19.5000</td>
-              </tr>
-              <tr>
-                  <td>Asian</td>
-                  <td>Research Assistant III</td>
-                  <td>19.5000</td>
-              </tr>
-              <tr>
-                  <td>Native Hawaiian or Other Pacific Islander</td>
-                  <td>Senior Sales Associate</td>
-                  <td>19.3333</td>
               </tr>
           </tbody>
       </table>
@@ -17169,6 +17089,18 @@
       
       </div>
       
+      </div>
+      <div  class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+      <div class="jp-Cell-inputWrapper">
+      <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+      </div>
+      <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+      </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+      <p>We can also check the race distribution on each location by city:</p>
+      
+      </div>
+      </div>
+      </div>
       </div><div  class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
       <div class="jp-Cell-inputWrapper">
       <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -17178,8 +17110,6 @@
       <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
            <div class="CodeMirror cm-s-jupyter">
       <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">sql</span>
-      
-      <span class="o">#</span><span class="w"> </span><span class="n">We</span><span class="w"> </span><span class="n">can</span><span class="w"> </span><span class="n">also</span><span class="w"> </span><span class="k">check</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">race</span><span class="w"> </span><span class="n">distribution</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="k">each</span><span class="w"> </span><span class="k">location</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">city</span><span class="p">:</span>
       
       <span class="k">SELECT</span><span class="w"> </span><span class="n">location_city</span><span class="p">,</span><span class="w"> </span><span class="n">race</span><span class="p">,</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="n">race</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">nu_race</span>
       <span class="k">FROM</span><span class="w"> </span><span class="n">hrdata</span>
@@ -17239,27 +17169,27 @@
               <tr>
                   <td>Akron</td>
                   <td>Black or African American</td>
-                  <td>18</td>
-              </tr>
-              <tr>
-                  <td>Akron</td>
-                  <td>Asian</td>
-                  <td>16</td>
+                  <td>17</td>
               </tr>
               <tr>
                   <td>Akron</td>
                   <td>Hispanic or Latino</td>
-                  <td>16</td>
+                  <td>15</td>
               </tr>
               <tr>
                   <td>Akron</td>
-                  <td>Native Hawaiian or Other Pacific Islander</td>
-                  <td>8</td>
+                  <td>Asian</td>
+                  <td>14</td>
               </tr>
               <tr>
                   <td>Akron</td>
                   <td>American Indian or Alaska Native</td>
                   <td>8</td>
+              </tr>
+              <tr>
+                  <td>Akron</td>
+                  <td>Native Hawaiian or Other Pacific Islander</td>
+                  <td>5</td>
               </tr>
               <tr>
                   <td>Allentown</td>
@@ -17273,8 +17203,8 @@
               </tr>
               <tr>
                   <td>Allentown</td>
-                  <td>Hispanic or Latino</td>
-                  <td>4</td>
+                  <td>Two or More Races</td>
+                  <td>3</td>
               </tr>
               <tr>
                   <td>Allentown</td>
@@ -17283,7 +17213,7 @@
               </tr>
               <tr>
                   <td>Allentown</td>
-                  <td>Two or More Races</td>
+                  <td>Hispanic or Latino</td>
                   <td>3</td>
               </tr>
               <tr>
@@ -17311,6 +17241,18 @@
       
       </div>
       
+      </div>
+      <div  class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+      <div class="jp-Cell-inputWrapper">
+      <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+      </div>
+      <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+      </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+      <p>.. and by state.</p>
+      
+      </div>
+      </div>
+      </div>
       </div><div  class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
       <div class="jp-Cell-inputWrapper">
       <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -17321,7 +17263,6 @@
            <div class="CodeMirror cm-s-jupyter">
       <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">sql</span>
       
-      <span class="o">#</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="k">state</span><span class="p">.</span>
       <span class="k">SELECT</span><span class="w"> </span><span class="n">location_state</span><span class="p">,</span><span class="w"> </span><span class="n">race</span><span class="p">,</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="n">race</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">nu_race</span>
       <span class="k">FROM</span><span class="w"> </span><span class="n">hrdata</span>
       <span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">location_state</span><span class="p">,</span><span class="w"> </span><span class="n">race</span>
@@ -17370,77 +17311,77 @@
               <tr>
                   <td>Illinois</td>
                   <td>White</td>
-                  <td>244</td>
+                  <td>226</td>
               </tr>
               <tr>
                   <td>Illinois</td>
                   <td>Two or More Races</td>
-                  <td>172</td>
+                  <td>156</td>
               </tr>
               <tr>
                   <td>Illinois</td>
                   <td>Asian</td>
-                  <td>142</td>
+                  <td>131</td>
               </tr>
               <tr>
                   <td>Illinois</td>
                   <td>Black or African American</td>
-                  <td>125</td>
+                  <td>117</td>
               </tr>
               <tr>
                   <td>Illinois</td>
                   <td>Hispanic or Latino</td>
-                  <td>94</td>
+                  <td>91</td>
               </tr>
               <tr>
                   <td>Illinois</td>
                   <td>American Indian or Alaska Native</td>
-                  <td>48</td>
+                  <td>47</td>
               </tr>
               <tr>
                   <td>Illinois</td>
                   <td>Native Hawaiian or Other Pacific Islander</td>
-                  <td>43</td>
+                  <td>42</td>
               </tr>
               <tr>
                   <td>Indiana</td>
                   <td>White</td>
-                  <td>202</td>
-              </tr>
-              <tr>
-                  <td>Indiana</td>
-                  <td>Black or African American</td>
-                  <td>120</td>
+                  <td>186</td>
               </tr>
               <tr>
                   <td>Indiana</td>
                   <td>Asian</td>
-                  <td>118</td>
+                  <td>109</td>
+              </tr>
+              <tr>
+                  <td>Indiana</td>
+                  <td>Black or African American</td>
+                  <td>109</td>
               </tr>
               <tr>
                   <td>Indiana</td>
                   <td>Two or More Races</td>
-                  <td>113</td>
+                  <td>106</td>
               </tr>
               <tr>
                   <td>Indiana</td>
                   <td>Hispanic or Latino</td>
-                  <td>62</td>
+                  <td>55</td>
               </tr>
               <tr>
                   <td>Indiana</td>
                   <td>Native Hawaiian or Other Pacific Islander</td>
-                  <td>56</td>
+                  <td>52</td>
               </tr>
               <tr>
                   <td>Indiana</td>
                   <td>American Indian or Alaska Native</td>
-                  <td>29</td>
+                  <td>28</td>
               </tr>
               <tr>
                   <td>Kentucky</td>
                   <td>White</td>
-                  <td>125</td>
+                  <td>121</td>
               </tr>
           </tbody>
       </table>
@@ -17452,6 +17393,18 @@
       
       </div>
       
+      </div>
+      <div  class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+      <div class="jp-Cell-inputWrapper">
+      <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+      </div>
+      <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+      </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+      <p>There is one more interesting data we haven't check yet: remote vs office.</p>
+      
+      </div>
+      </div>
+      </div>
       </div><div  class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
       <div class="jp-Cell-inputWrapper">
       <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -17461,8 +17414,6 @@
       <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
            <div class="CodeMirror cm-s-jupyter">
       <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">sql</span>
-      
-      <span class="o">#</span><span class="w"> </span><span class="n">There</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="n">one</span><span class="w"> </span><span class="k">more</span><span class="w"> </span><span class="n">interesting</span><span class="w"> </span><span class="k">data</span><span class="w"> </span><span class="n">we</span><span class="w"> </span><span class="n">haven</span><span class="err">&#39;</span><span class="n">t</span><span class="w"> </span><span class="k">check</span><span class="w"> </span><span class="n">yet</span><span class="p">:</span><span class="w"> </span><span class="n">remote</span><span class="w"> </span><span class="n">vs</span><span class="w"> </span><span class="n">office</span><span class="p">.</span>
       
       <span class="k">SELECT</span><span class="w"> </span><span class="k">DISTINCT</span><span class="w"> </span><span class="k">location</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">hrdata</span><span class="p">;</span>
       </pre></div>
@@ -17519,6 +17470,18 @@
       
       </div>
       
+      </div>
+      <div  class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+      <div class="jp-Cell-inputWrapper">
+      <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+      </div>
+      <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+      </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+      <p>First we can check what is the distribution of the employees:</p>
+      
+      </div>
+      </div>
+      </div>
       </div><div  class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
       <div class="jp-Cell-inputWrapper">
       <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -17528,8 +17491,6 @@
       <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
            <div class="CodeMirror cm-s-jupyter">
       <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">sql</span>
-      
-      <span class="o">#</span><span class="w"> </span><span class="k">First</span><span class="w"> </span><span class="n">we</span><span class="w"> </span><span class="n">can</span><span class="w"> </span><span class="k">check</span><span class="w"> </span><span class="n">what</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">distribution</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">employees</span><span class="p">:</span>
       
       <span class="k">SELECT</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="n">id</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">nu_employee</span><span class="p">,</span><span class="w"> </span><span class="k">location</span>
       <span class="k">FROM</span><span class="w"> </span><span class="n">hrdata</span>
@@ -17574,11 +17535,11 @@
           </thead>
           <tbody>
               <tr>
-                  <td>16715</td>
+                  <td>15469</td>
                   <td>Headquarters</td>
               </tr>
               <tr>
-                  <td>5499</td>
+                  <td>5105</td>
                   <td>Remote</td>
               </tr>
           </tbody>
@@ -17603,6 +17564,18 @@
       </div>
       </div>
       </div>
+      </div>
+      <div  class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+      <div class="jp-Cell-inputWrapper">
+      <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+      </div>
+      <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+      </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+      <p>What is the distribution between the genders?</p>
+      
+      </div>
+      </div>
+      </div>
       </div><div  class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
       <div class="jp-Cell-inputWrapper">
       <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -17612,8 +17585,6 @@
       <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
            <div class="CodeMirror cm-s-jupyter">
       <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">sql</span>
-      
-      <span class="o">#</span><span class="w"> </span><span class="n">What</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">distribution</span><span class="w"> </span><span class="k">between</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">genders</span><span class="o">?</span>
       
       <span class="k">SELECT</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="n">id</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">nu_employee</span><span class="p">,</span><span class="w"> </span><span class="k">location</span><span class="p">,</span><span class="w"> </span><span class="n">gender</span>
       <span class="k">FROM</span><span class="w"> </span><span class="n">hrdata</span>
@@ -17661,22 +17632,22 @@
           </thead>
           <tbody>
               <tr>
-                  <td>8487</td>
+                  <td>7863</td>
                   <td>Headquarters</td>
                   <td>Male</td>
               </tr>
               <tr>
-                  <td>7777</td>
+                  <td>7182</td>
                   <td>Headquarters</td>
                   <td>Female</td>
               </tr>
               <tr>
-                  <td>2801</td>
+                  <td>2609</td>
                   <td>Remote</td>
                   <td>Male</td>
               </tr>
               <tr>
-                  <td>2544</td>
+                  <td>2358</td>
                   <td>Remote</td>
                   <td>Female</td>
               </tr>
@@ -17690,6 +17661,18 @@
       
       </div>
       
+      </div>
+      <div  class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+      <div class="jp-Cell-inputWrapper">
+      <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+      </div>
+      <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+      </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+      <p>Nevertheless, we can check the location for race:</p>
+      
+      </div>
+      </div>
+      </div>
       </div><div  class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
       <div class="jp-Cell-inputWrapper">
       <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -17699,8 +17682,6 @@
       <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
            <div class="CodeMirror cm-s-jupyter">
       <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">sql</span>
-      
-      <span class="o">#</span><span class="w"> </span><span class="n">Nevertheless</span><span class="p">,</span><span class="w"> </span><span class="n">we</span><span class="w"> </span><span class="n">can</span><span class="w"> </span><span class="k">check</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="k">location</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">race</span><span class="p">:</span>
       
       <span class="k">SELECT</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="n">id</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">22214</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">100</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">nu_employee</span><span class="p">,</span><span class="w"> </span><span class="k">location</span><span class="p">,</span><span class="w"> </span><span class="n">race</span>
       <span class="k">FROM</span><span class="w"> </span><span class="n">hrdata</span>
@@ -17748,72 +17729,72 @@
           </thead>
           <tbody>
               <tr>
-                  <td>21.3244</td>
+                  <td>19.7038</td>
                   <td>Headquarters</td>
                   <td>White</td>
               </tr>
               <tr>
-                  <td>12.3526</td>
+                  <td>11.4477</td>
                   <td>Headquarters</td>
                   <td>Black or African American</td>
               </tr>
               <tr>
-                  <td>12.3031</td>
+                  <td>11.3577</td>
                   <td>Headquarters</td>
                   <td>Two or More Races</td>
               </tr>
               <tr>
-                  <td>12.1590</td>
+                  <td>11.2587</td>
                   <td>Headquarters</td>
                   <td>Asian</td>
               </tr>
               <tr>
-                  <td>8.5622</td>
+                  <td>7.9454</td>
                   <td>Headquarters</td>
                   <td>Hispanic or Latino</td>
               </tr>
               <tr>
-                  <td>4.5152</td>
+                  <td>4.2091</td>
                   <td>Headquarters</td>
                   <td>American Indian or Alaska Native</td>
               </tr>
               <tr>
-                  <td>4.0290</td>
+                  <td>3.7139</td>
                   <td>Headquarters</td>
                   <td>Native Hawaiian or Other Pacific Islander</td>
               </tr>
               <tr>
-                  <td>7.1621</td>
+                  <td>6.7075</td>
                   <td>Remote</td>
                   <td>White</td>
               </tr>
               <tr>
-                  <td>4.1190</td>
+                  <td>3.8039</td>
                   <td>Remote</td>
                   <td>Two or More Races</td>
               </tr>
               <tr>
-                  <td>3.9390</td>
+                  <td>3.6554</td>
                   <td>Remote</td>
                   <td>Black or African American</td>
               </tr>
               <tr>
-                  <td>3.8759</td>
+                  <td>3.5923</td>
                   <td>Remote</td>
                   <td>Asian</td>
               </tr>
               <tr>
-                  <td>2.6965</td>
+                  <td>2.4804</td>
                   <td>Remote</td>
                   <td>Hispanic or Latino</td>
               </tr>
               <tr>
-                  <td>1.5036</td>
+                  <td>1.3910</td>
                   <td>Remote</td>
                   <td>Native Hawaiian or Other Pacific Islander</td>
               </tr>
               <tr>
-                  <td>1.4585</td>
+                  <td>1.3505</td>
                   <td>Remote</td>
                   <td>American Indian or Alaska Native</td>
               </tr>
@@ -17834,8 +17815,7 @@
       </div>
       <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
       </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-      <p>It's good to see here that the race distribution percentages and the location distributions can be recognized here,
-      as that means the company doesn't decide on the working place based on gender or race.</p>
+      <p>It's good to see here that both in the gender and in the race distribution percentages we can recognize the location distributions, as that means the company doesn't decide on the working place based on gender or race.</p>
       <p>From my experience, the jobtitle (and maybe the role level) would be the key factor, for which wouldn't be the
       best idea to visualize in a pivot, but in a chart.</p>
       
@@ -18001,6 +17981,7 @@
       
       
       </html>
+      
       
 
 
