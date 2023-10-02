@@ -27,6 +27,24 @@
 
 	<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
 
+
+	<script>
+		// Disable right-click on the entire page
+		document.addEventListener("contextmenu", function(e) {
+			e.preventDefault();
+		});
+	</script>
+
+	<script>
+    	// Disable keyboard shortcuts for DevTools
+    	document.addEventListener("keydown", function(e) {
+        	if (e.key === "F12" || (e.key === "U" && e.ctrlKey && e.shiftKey)) {
+            	e.preventDefault();
+        	}
+    	});
+	</script>
+
+
 </head>
 <body>
 	<div class="responsive_menu">
